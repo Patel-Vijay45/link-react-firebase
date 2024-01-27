@@ -3,15 +3,11 @@
 import './assets/css/core.css';
 import 'boxicons';
 import Routes from './routes';
-import { AuthProvider } from './context/AuthContext';
-import { auth } from './utils/firebase/firebase.utils';
+import { AuthProvider } from './context/AuthContext'; 
 import { useEffect, useState } from 'react';
  
 
-const App =()=>{
-  const [user, setUser] = useState(null);
-
-   
+const App =()=>{ 
   return (
     <AuthProvider>
       <Routes/>

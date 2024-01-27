@@ -5,10 +5,10 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
-  signOut, 
+  signOut,
 } from "firebase/auth";
 
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; 
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyBlimq5s2rDUG6Z2J1IEQCKKRUzponMRWg",
   authDomain: "react-firebase-link.firebaseapp.com",
@@ -20,9 +20,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const  firebaseApp = initializeApp(firebaseConfig);
+export const firebaseApp = initializeApp(firebaseConfig);
 
-export const auth = getAuth(firebaseApp); 
+export const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
 
 provider.setCustomParameters({
@@ -55,11 +55,9 @@ export const createUserDocFromAuth = async (userAuth) => {
 
 export const signOutGoogle = () => {
   signOut(auth)
-    .then(() => { 
-    })
+    .then(() => {})
     .catch((error) => {});
 };
 export const getCurrentUser = () => {
   return auth.currentUser;
 };
-   

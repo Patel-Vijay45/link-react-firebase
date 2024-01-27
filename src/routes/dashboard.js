@@ -1,12 +1,8 @@
-import { lazy } from "react";
+ 
 import AuthGuard from "../auth/AuthGuard.jsx";
 import Dashboard from "../views/dashboard/Dashboard.jsx";
 import Test from "../views/test/Test.jsx";
-import { Outlet } from "react-router-dom";
-// // project imports
-
-// import Loadable from 'ui-component/Loadable';
-// const LoginPage = Loadable(lazy(() => import('views/auth/login.jsx')));
+import { Outlet } from "react-router-dom"; 
 const DashboardRoutes = {
   path: "/",
   element: (

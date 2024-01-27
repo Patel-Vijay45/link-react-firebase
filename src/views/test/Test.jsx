@@ -1,16 +1,13 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import Button from "../../ui-components/Button";
 import {
-  getCurrentUser,
-  signOutGoogle,
+  getCurrentUser, signOutGoogle, 
 } from "../../utils/firebase/firebase.utils";
-
-import useAuth from "../../hooks/useAuth.js";
-const Test = () => {
-  const { logout } = useAuth();
+ 
+const Test = () => { 
 const navigate=useNavigate();
   const googleLogout = () => {
-    logout();
+    signOutGoogle();
     window.location.reload();
   };
   const getUser = () => {

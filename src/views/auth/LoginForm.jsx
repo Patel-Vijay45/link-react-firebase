@@ -1,39 +1,27 @@
- 
 import { Navigate } from "react-router-dom";
 import Button from "../../ui-components/Button";
 import {
   signInWithGooglePopup,
-  createUserDocFromAuth,
   getCurrentUser,
   signOutGoogle,
-  auth, 
-  firebaseApp
 } from "../../utils/firebase/firebase.utils.js";
-import { 
-  signInWithPopup, 
-} from "firebase/auth";
-import useAuth from "../../hooks/useAuth.js";
 const LoginForm = () => {
-
-  const { login,logout } = useAuth();
   const googleSignIn = async () => {
-   
     try {
-      await signInWithGooglePopup(); 
+      await signInWithGooglePopup();
     } catch (error) {
       alert(error);
     }
-  return <Navigate replace to="/dashboard" />;
+    return <Navigate replace to="/dashboard" />;
   };
 
-  const googleLogout=()=>{
-     logout(); 
-  }
- 
-  const getUser=()=>{
-    console.log(getCurrentUser()); 
-  }
- 
+  const googleLogout = () => {
+    signOutGoogle();
+  };
+
+  const getUser = () => {
+    console.log(getCurrentUser());
+  };
 
   return (
     <>

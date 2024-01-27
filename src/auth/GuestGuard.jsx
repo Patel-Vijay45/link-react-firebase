@@ -1,10 +1,11 @@
-import useAuth from "../hooks/useAuth";
-import { getCurrentUser } from "../utils/firebase/firebase.utils";
+
+import { useContext } from "react";
+import {AuthContext} from "../context/AuthContext.js";
 import { Navigate } from "react-router-dom";
 const GuestGuard = ({ children }) => {
-  let { isAuthenticated } = useAuth();
-  let res = getCurrentUser();
-  if (isAuthenticated) {
+
+  const {currentUser} = useContext(AuthContext);
+  if (currentUser) {
     return <Navigate replace to="/dashboard" />;
   }
   return <>{children}</>;
